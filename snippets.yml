@@ -1,51 +1,396 @@
 snippets:
-  - trigger: ":qabug"
-    name: "Reporte de Bug QA"
+  - trigger: ":abrir"
+    name: "Abertura de solicitação"
     replace: |
-      ### 📋 Contextualização do Requisito
+      ## CONTEXTUALIZAÇÃO DO REQUISITO
 
-      **Acessos Utilizados:**
-      - Admin: [Inserir usuário/login]
-      - Cliente/Empresa: [Inserir usuário/login]
+      **Acessos**
 
-      **Ambiente / URL:**
-      - URL: [Inserir URL]
-      - Ambiente: [HML / Staging / Produção]
+      - Admin (contabilidade):
+      - Cliente (empresa da contabilidade):
+      - Usuário adicional admin:
+      - Usuário adicional cliente:
 
-      **Comportamento Atual:**
-      - **Situação:** [Descreva o cenário e o elemento afetado]
-      - **Problema:** [Explique o impacto]
+      **URL**
 
-      **Passos para Reproduzir:**
-      1. Acessar a tela [Tela]
-      2. Executar ação [Ação]
+      -
 
-      **Resultado Esperado:**
-      [Descreva o comportamento correto]
+      **Local**
 
-      **Evidências:**
-      - [x] Print / Vídeo anexado
+      - SCI WEB >
+
+      ---
+
+      ## SITUAÇÃO
+
+
+
+      ---
+
+      ## PROBLEMÁTICA
+
+
+
+      ---
+
+      ## COMPORTAMENTO ESPERADO
+
+
+
+      ---
+
+      ## COMO REPRODUZIR O PROBLEMA EM QUESTÃO
+
+      
+
+      ---
+
+      ## AÇÃO CORRETIVA
+
+
+
+      ---
+
+      ## CRITÉRIOS DE ACEITE
+
+      -
+      -
+      -
 
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}}
+      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{current_date}}
 
-  - trigger: ":qaaprov"
-    name: "Aprovação de Card QA"
+  - trigger: ":reprovarHomologacao"
+    name: "Reprovação da solicitação em HOMOLOGAÇÃO"
     replace: |
-      ### ✅ Card Aprovado em QA
+      ## CONTEXTUALIZAÇÃO DO TESTE
 
-      **Data do Teste:** {{current_date}}
-      **Ambiente:** [HML / Staging]
+      **URL**
 
-      **Cenários Testados:**
-      - [x] Caminho feliz (fluxo principal validado)
-      - [x] Validações de campos e regras de negócio
+      -
 
-      **Status:** Pronto para Produção / Deploy.
+      **Local**
 
+      - SCI WEB >
+
+      **Acessos utilizados**
+
+      - Admin:
+      - Cliente:
+      - Usuário adicional:
+      - Outros:
+
+      ---
+
+      ## CENÁRIO TESTADO
+
+      Descrever brevemente o cenário utilizado para validar a correção realizada.
+
+      **Passos executados:**
+
+      1.
+      2.
+      3.
+      4.
+
+      ---
+
+      ## MOTIVO DA REPROVAÇÃO
+
+      Durante o reteste, foi identificado que o comportamento informado no card ainda não foi corrigido corretamente.
+
+
+
+      ---
+
+      ## COMPORTAMENTO ATUAL
+
+
+
+      ---
+
+      ## COMPORTAMENTO ESPERADO
+
+
+
+      ---
+
+      ## EVIDÊNCIAS
+
+      - Print(s) anexado(s) ao card.
+      - Vídeo anexado ao card.
+      - Log/retorno da requisição, quando aplicável.
+      - Outras evidências:
+
+      ---
+
+      ## OBSERVAÇÕES
+
+      -
+
+      ---
+
+      ## RESULTADO DO TESTE
+
+      **REPROVADO**
+
+      O comportamento esperado não foi atendido e o card necessita de novos ajustes antes de uma nova validação.
+      
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}}
+      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{current_date}}
+
+
+  - trigger: ":reprovarProducao"
+    name: "Teste da solicitação em PRODUÇÃO"
+    replace: |
+      ## CONTEXTUALIZAÇÃO DO RE-TESTE
+
+      **URL**
+
+      -
+
+      **Local**
+
+      - SCI WEB >
+
+      **Acessos utilizados**
+
+      - Admin:
+      - Cliente:
+      - Usuário adicional:
+      - Outros:
+
+      ---
+
+      ## OBJETIVO DO RE-TESTE
+
+      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
+
+      ---
+
+      ## CENÁRIO TESTADO
+
+      **Passos executados:**
+
+      1.
+      2.
+      3.
+      4.
+
+      ---
+
+      ## VALIDAÇÕES REALIZADAS
+
+      - **Correção principal:**
+      - **Cenário original:**
+      - **Cenários relacionados:**
+      - **Possíveis impactos/regressões:**
+
+      ---
+
+      ## RESULTADO OBTIDO
+
+
+
+      ---
+
+      ## COMPORTAMENTO ESPERADO
+
+
+
+      ---
+
+      ## EVIDÊNCIAS
+
+      - Print(s) anexado(s) ao card.
+      - Vídeo anexado ao card.
+      - Outras evidências:
+
+      ---
+
+      ## OBSERVAÇÕES
+
+      -
+
+      ---
+
+      ## RESULTADO DO RE-TESTE
+
+      **STATUS:**
+            
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{current_date}}
+
+
+  - trigger: ":aprovarProducao"
+    name: "Re-teste da solicitação em PRODUÇÃO"
+    replace: |
+      ## CONTEXTUALIZAÇÃO DO RE-TESTE
+
+      **URL**
+
+      -
+
+      **Local**
+
+      - SCI WEB >
+
+      **Acessos utilizados**
+
+      - Admin:
+      - Cliente:
+      - Usuário adicional:
+      - Outros:
+
+      ---
+
+      ## OBJETIVO DO RE-TESTE
+
+      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
+
+      ---
+
+      ## CENÁRIO TESTADO
+
+      **Passos executados:**
+
+      1.
+      2.
+      3.
+      4.
+
+      ---
+
+      ## VALIDAÇÕES REALIZADAS
+
+      - **Correção principal:**
+      - **Cenário original:**
+      - **Cenários relacionados:**
+      - **Possíveis impactos/regressões:**
+
+      ---
+
+      ## RESULTADO OBTIDO
+
+
+
+      ---
+
+      ## COMPORTAMENTO ESPERADO
+
+
+
+      ---
+
+      ## EVIDÊNCIAS
+
+      - Print(s) anexado(s) ao card.
+      - Vídeo anexado ao card.
+      - Outras evidências:
+
+      ---
+
+      ## OBSERVAÇÕES
+
+      -
+
+      ---
+
+      ## RESULTADO DO RE-TESTE
+
+      **STATUS:**
+            
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{current_date}}
+
+  - trigger: ":aprovarHomologacao"
+    name: "Aprovação da solicitação em HOMOLOGAÇÃO"
+    replace: |
+      ## CONTEXTUALIZAÇÃO DO TESTE
+
+      **URL**
+
+      -
+
+      **Local**
+
+      - SCI WEB >
+
+      **Acessos utilizados**
+
+      - Admin:
+      - Cliente:
+      - Usuário adicional:
+      - Outros:
+
+      ---
+
+      ## OBJETIVO DO TESTE
+
+      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
+
+      ---
+
+      ## CENÁRIO TESTADO
+
+      **Passos executados:**
+
+      1.
+      2.
+      3.
+      4.
+
+      ---
+
+      ## VALIDAÇÕES REALIZADAS
+
+      - **Correção principal:**
+      - **Cenário original:**
+      - **Cenários relacionados:**
+      - **Possíveis impactos/regressões:**
+
+      ---
+
+      ## RESULTADO OBTIDO
+
+
+
+      ---
+
+      ## EVIDÊNCIAS
+
+      - Print(s) anexado(s) ao card.
+      - Vídeo anexado ao card.
+      - Outras evidências:
+
+      ---
+
+      ## OBSERVAÇÕES
+
+      -
+
+      ---
+
+      ## RESULTADO DO TESTE
+
+      **APROVADO**
+
+      O comportamento esperado foi atendido.
+            
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{current_date}}
