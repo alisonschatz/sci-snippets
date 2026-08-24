@@ -62,7 +62,7 @@ snippets:
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{user_role}}
       {{current_date}}
 
   - trigger: ":reprovarHomologacao"
@@ -144,7 +144,7 @@ snippets:
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{user_role}}
       {{current_date}}
 
 
@@ -229,7 +229,7 @@ snippets:
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{user_role}}
       {{current_date}}
 
 
@@ -314,7 +314,7 @@ snippets:
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{user_role}}
       {{current_date}}
 
   - trigger: ":aprovarHomologacao"
@@ -394,5 +394,5 @@ snippets:
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}} da Fábrica SCI WEB - RH NET Social
+      {{user_role}}
       {{current_date}}
