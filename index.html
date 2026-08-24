@@ -349,7 +349,7 @@
         const blob = await zip.generateAsync({ type: 'blob' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = 'sci-team-snippets.zip';
+        a.download = 'sci-snippets.zip';
         a.click();
 
         status.textContent = 'Download iniciado.';
