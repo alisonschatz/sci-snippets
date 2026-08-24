@@ -1,0 +1,51 @@
+snippets:
+  - trigger: ":qabug"
+    name: "Reporte de Bug QA"
+    replace: |
+      ### 📋 Contextualização do Requisito
+
+      **Acessos Utilizados:**
+      - Admin: [Inserir usuário/login]
+      - Cliente/Empresa: [Inserir usuário/login]
+
+      **Ambiente / URL:**
+      - URL: [Inserir URL]
+      - Ambiente: [HML / Staging / Produção]
+
+      **Comportamento Atual:**
+      - **Situação:** [Descreva o cenário e o elemento afetado]
+      - **Problema:** [Explique o impacto]
+
+      **Passos para Reproduzir:**
+      1. Acessar a tela [Tela]
+      2. Executar ação [Ação]
+
+      **Resultado Esperado:**
+      [Descreva o comportamento correto]
+
+      **Evidências:**
+      - [x] Print / Vídeo anexado
+
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}}
+
+  - trigger: ":qaaprov"
+    name: "Aprovação de Card QA"
+    replace: |
+      ### ✅ Card Aprovado em QA
+
+      **Data do Teste:** {{current_date}}
+      **Ambiente:** [HML / Staging]
+
+      **Cenários Testados:**
+      - [x] Caminho feliz (fluxo principal validado)
+      - [x] Validações de campos e regras de negócio
+
+      **Status:** Pronto para Produção / Deploy.
+
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}}
