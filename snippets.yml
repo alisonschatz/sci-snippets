@@ -138,3 +138,84 @@ snippets:
       Atenciosamente,
       {{user_name}}
       {{user_role}} | {{current_date}}
+
+
+  - trigger: ":impedimento"
+    name: "Registro de Impedimento"
+    replace: |
+      ## IMPEDIMENTO IDENTIFICADO
+
+      **Localização & Ambiente**
+      - **URL:** https://
+      - **Caminho (Menu):** SCI WEB > 
+
+      ---
+
+      ## DESCRIÇÃO DO BLOQUEIO
+      Não é possível prosseguir com os testes/desenvolvimento devido ao seguinte problema:
+
+      - **Motivo:** 
+      - **Dependência:** [ ] Ambiente offline | [ ] Acesso/Permissão | [ ] Erro 500/API | [ ] Outro
+
+      ---
+
+      ## IMPACTO
+      - **Bloqueia:** [ ] Card completo | [ ] Cenário específico apenas
+
+      ---
+
+      ## EVIDÊNCIAS / ERRO
+      - 
+
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} | {{current_date}}
+
+
+  - trigger: ":regras"
+    name: "Refinamento / Dúvida de Regra de Negócio"
+    replace: |
+      ## DÚVIDA DE REGRA DE NEGÓCIO
+
+      **Localização**
+      - **Caminho (Menu):** SCI WEB > 
+
+      ---
+
+      ## CENÁRIO / CONTEXTO
+      Durante o desenvolvimento/validação, surgiu uma dúvida sobre o comportamento esperado da regra.
+
+      - **Dúvida:** 
+      - **Cenário Atual Acontece:** 
+      - **Questionamento:** Como o sistema deve se comportar neste caso específico?
+
+      ---
+
+      ## IMPACTO NO CARD
+      - [ ] Aguardando definição do Product Owner (PO) / Analista de Negócio para prosseguir.
+
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} | {{current_date}}
+
+  - trigger: ":finalizarDev"
+    name: "Finalização do Desenvolvimento"
+    replace: |
+      ## FINALIZAÇÃO DO DESENVOLVIMENTO 🚀
+
+      **O que foi feito:**
+      - 
+
+      **Onde/como testar:**
+      - **Caminho (Menu):** SCI WEB > 
+      - **Cenário Principal:** 
+
+      **Impactos/alterações adicionais:**
+      - 
+
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} | {{current_date}}
