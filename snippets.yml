@@ -1,398 +1,140 @@
 snippets:
   - trigger: ":abrir"
-    name: "Abertura de solicitação"
+    name: "Abertura de Solicitação"
     replace: |
       ## CONTEXTUALIZAÇÃO DO REQUISITO
 
-      **Acessos**
+      **Localização & Acesso**
+      - **URL:** https://
+      - **Caminho (Menu):** SCI WEB > 
 
-      - Admin (contabilidade):
-      - Cliente (empresa da contabilidade):
-      - Usuário adicional admin:
-      - Usuário adicional cliente:
-
-      **URL**
-
-      -
-
-      **Local**
-
-      - SCI WEB >
+      **Acessos para Teste**
+      - Admin (contabilidade): 
+      - Cliente (empresa): 
+      - Usuário adicional: 
 
       ---
 
-      ## SITUAÇÃO
-
-      -
-
-      ---
-
-      ## EVIDÊNCIAS
+      ## SITUAÇÃO & PROBLEMÁTICA
+      - **Comportamento Atual:** 
+      - **Comportamento Esperado:** 
 
       ---
 
-      ## PROBLEMÁTICA
-
-      -
-
-      ---
-
-      ## COMPORTAMENTO ESPERADO
-
-      -
-
-      ---
-
-      ## COMO REPRODUZIR O PROBLEMA EM QUESTÃO
-
-      -
-      
-      ---
-
-      ## AÇÃO CORRETIVA
-
-      -
+      ## COMO REPRODUZIR
+      1. 
+      2. 
+      3. 
 
       ---
 
       ## CRITÉRIOS DE ACEITE
+      - 
 
-      -
+      ---
+
+      ## EVIDÊNCIAS
+      - 
 
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}}
-      {{current_date}}
+      {{user_role}} | {{current_date}}
 
-  - trigger: ":reprovarHomologacao"
-    name: "Reprovação da solicitação em HOMOLOGAÇÃO"
+
+  - trigger: ":aprovar"
+    name: "Aprovação de Solicitação"
     replace: |
       ## CONTEXTUALIZAÇÃO DO TESTE
 
-      **URL**
+      **Localização & Ambiente**
+      - **URL:** https://
+      - **Caminho (Menu):** SCI WEB > 
 
-      -
-
-      **Local**
-
-      - SCI WEB >
-
-      **Acessos utilizados**
-
-      - Admin:
-      - Cliente:
-      - Usuário adicional:
-      - Outros:
+      **Acessos Utilizados**
+      - Admin: 
+      - Cliente: 
+      - Outros: 
 
       ---
 
-      ## CENÁRIO TESTADO
+      ## VALIDAÇÕES REALIZADAS
+      - **Correção Principal:** 
+      - **Cenários Relacionados / Regressão:** 
 
-      Descrever brevemente o cenário utilizado para validar a correção realizada.
+      **Passos Executados:**
+      1. 
+      2. 
 
-      **Passos executados:**
+      ---
 
-      1.
-      2.
-      3.
-      4.
+      ## EVIDÊNCIAS
+      - Print(s) anexado(s) ao card.
+      - Vídeo anexado ao card.
+      - Outras evidências: 
+
+      ---
+
+      ## OBSERVAÇÕES
+      - 
+
+      ---
+
+      ## RESULTADO DO TESTE
+      **Status:** APROVADO ✅
+      
+      ---
+      Atenciosamente,
+      {{user_name}}
+      {{user_role}} | {{current_date}}
+
+
+  - trigger: ":reprovar"
+    name: "Reprovação de Solicitação"
+    replace: |
+      ## CONTEXTUALIZAÇÃO DO TESTE
+
+      **Localização & Ambiente**
+      - **URL:** https://
+      - **Caminho (Menu):** SCI WEB > 
+
+      **Acessos Utilizados**
+      - Admin: 
+      - Cliente: 
+      - Outros: 
 
       ---
 
       ## MOTIVO DA REPROVAÇÃO
+      Durante a validação, foi identificado que o comportamento esperado não foi atendido ou gerou efeito colateral.
 
-      Durante o reteste, foi identificado que o comportamento informado no card ainda não foi corrigido corretamente.
-
-
-
-      ---
-
-      ## COMPORTAMENTO ATUAL
-
-      -
+      - **Comportamento Obtido:** 
+      - **Comportamento Esperado:** 
 
       ---
 
-      ## COMPORTAMENTO ESPERADO
-
-      -
+      ## PASSO A PASSO DA REPRODUÇÃO
+      1. 
+      2. 
 
       ---
 
       ## EVIDÊNCIAS
-
       - Print(s) anexado(s) ao card.
       - Vídeo anexado ao card.
-      - Log/retorno da requisição, quando aplicável.
-      - Outras evidências:
+      - Log / Requisição (se aplicável): 
 
       ---
 
       ## OBSERVAÇÕES
-
-      -
+      - 
 
       ---
 
       ## RESULTADO DO TESTE
-
-      **REPROVADO**
-
-      O comportamento esperado não foi atendido e o card necessita de novos ajustes antes de uma nova validação.
+      **Status:** REPROVADO ❌
       
       ---
       Atenciosamente,
       {{user_name}}
-      {{user_role}}
-      {{current_date}}
-
-
-  - trigger: ":reprovarProducao"
-    name: "Teste da solicitação em PRODUÇÃO"
-    replace: |
-      ## CONTEXTUALIZAÇÃO DO RE-TESTE
-
-      **URL**
-
-      -
-
-      **Local**
-
-      - SCI WEB >
-
-      **Acessos utilizados**
-
-      - Admin:
-      - Cliente:
-      - Usuário adicional:
-      - Outros:
-
-      ---
-
-      ## OBJETIVO DO RE-TESTE
-
-      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
-
-      ---
-
-      ## CENÁRIO TESTADO
-
-      **Passos executados:**
-
-      1.
-      2.
-      3.
-      4.
-
-      ---
-
-      ## VALIDAÇÕES REALIZADAS
-
-      - **Correção principal:**
-      - **Cenário original:**
-      - **Cenários relacionados:**
-      - **Possíveis impactos/regressões:**
-
-      ---
-
-      ## RESULTADO OBTIDO
-
-      -
-
-      ---
-
-      ## COMPORTAMENTO ESPERADO
-
-      -
-
-      ---
-
-      ## EVIDÊNCIAS
-
-      - Print(s) anexado(s) ao card.
-      - Vídeo anexado ao card.
-      - Outras evidências:
-
-      ---
-
-      ## OBSERVAÇÕES
-
-      -
-
-      ---
-
-      ## RESULTADO DO RE-TESTE
-
-      **STATUS:**
-            
-      ---
-      Atenciosamente,
-      {{user_name}}
-      {{user_role}}
-      {{current_date}}
-
-
-  - trigger: ":aprovarProducao"
-    name: "Re-teste da solicitação em PRODUÇÃO"
-    replace: |
-      ## CONTEXTUALIZAÇÃO DO RE-TESTE
-
-      **URL**
-
-      -
-
-      **Local**
-
-      - SCI WEB >
-
-      **Acessos utilizados**
-
-      - Admin:
-      - Cliente:
-      - Usuário adicional:
-      - Outros:
-
-      ---
-
-      ## OBJETIVO DO RE-TESTE
-
-      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
-
-      ---
-
-      ## CENÁRIO TESTADO
-
-      **Passos executados:**
-
-      1.
-      2.
-      3.
-      4.
-
-      ---
-
-      ## VALIDAÇÕES REALIZADAS
-
-      - **Correção principal:**
-      - **Cenário original:**
-      - **Cenários relacionados:**
-      - **Possíveis impactos/regressões:**
-
-      ---
-
-      ## RESULTADO OBTIDO
-
-      -
-
-      ---
-
-      ## COMPORTAMENTO ESPERADO
-
-      -
-
-      ---
-
-      ## EVIDÊNCIAS
-
-      - Print(s) anexado(s) ao card.
-      - Vídeo anexado ao card.
-      - Outras evidências:
-
-      ---
-
-      ## OBSERVAÇÕES
-
-      -
-
-      ---
-
-      ## RESULTADO DO RE-TESTE
-
-      **STATUS:**
-            
-      ---
-      Atenciosamente,
-      {{user_name}}
-      {{user_role}}
-      {{current_date}}
-
-  - trigger: ":aprovarHomologacao"
-    name: "Aprovação da solicitação em HOMOLOGAÇÃO"
-    replace: |
-      ## CONTEXTUALIZAÇÃO DO TESTE
-
-      **URL**
-
-      -
-
-      **Local**
-
-      - SCI WEB >
-
-      **Acessos utilizados**
-
-      - Admin:
-      - Cliente:
-      - Usuário adicional:
-      - Outros:
-
-      ---
-
-      ## OBJETIVO DO TESTE
-
-      Validar a correção realizada conforme solicitado no card, verificando se o comportamento identificado anteriormente foi corrigido.
-
-      ---
-
-      ## CENÁRIO TESTADO
-
-      **Passos executados:**
-
-      1.
-      2.
-      3.
-      4.
-
-      ---
-
-      ## VALIDAÇÕES REALIZADAS
-
-      - **Correção principal:**
-      - **Cenário original:**
-      - **Cenários relacionados:**
-      - **Possíveis impactos/regressões:**
-
-      ---
-
-      ## RESULTADO OBTIDO
-      
-      -
-
-      ---
-
-      ## EVIDÊNCIAS
-
-      - Print(s) anexado(s) ao card.
-      - Vídeo anexado ao card.
-      - Outras evidências:
-
-      ---
-
-      ## OBSERVAÇÕES
-
-      -
-
-      ---
-
-      ## RESULTADO DO TESTE
-
-      **APROVADO**
-
-      O comportamento esperado foi atendido.
-            
-      ---
-      Atenciosamente,
-      {{user_name}}
-      {{user_role}}
-      {{current_date}}
+      {{user_role}} | {{current_date}}
