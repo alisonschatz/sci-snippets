@@ -35,21 +35,18 @@ function setupEventListeners() {
  */
 async function loadUserProfile() {
   try {
-    const data = await chrome.storage.local.get('userInfo');
-    const info = data.userInfo || { name: '', role: '' };
-
-    document.getElementById('userName').value = info.name || '';
-    document.getElementById('userRole').value = info.role || '';
+    const info = await fetchAndFillProfile();
 
     if (info.name && info.name.trim()) {
       renderProfileSummary(info);
-      showProfileSummary();
+      setProfileView('summary');
     } else {
-      showProfileForm(false);
+      document.getElementById('cancelProfileBtn').hidden = true;
+      setProfileView('form');
     }
   } catch (err) {
     console.error('[SCI Popup] Erro ao carregar perfil:', err);
-    showProfileForm(false);
+    setProfileView('form');
   }
 }
 
@@ -62,30 +59,86 @@ function renderProfileSummary(info) {
   document.getElementById('profileSummaryRole').textContent = info.role || '';
 }
 
+const PROFILE_TRANSITION_MS = 140;
+
 /**
- * Exibe o resumo recolhido do perfil e esconde o formulario.
+ * Alterna instantaneamente (sem transicao) entre resumo e formulario.
+ * Usado apenas no carregamento inicial do popup, para nao "piscar" ao abrir.
  */
-function showProfileSummary() {
-  document.getElementById('profileSummary').hidden = false;
-  document.getElementById('profileForm').hidden = true;
+function setProfileView(view) {
+  document.getElementById('profileSummary').hidden = view !== 'summary';
+  document.getElementById('profileForm').hidden = view !== 'form';
 }
 
 /**
- * Exibe o formulario de edicao do perfil.
+ * Faz a troca suave (fade-out do estado atual -> fade-in do novo estado),
+ * evitando a transicao seca entre o resumo recolhido e o formulario expandido.
+ */
+function crossfadeProfileView(view, onShown) {
+  const summary = document.getElementById('profileSummary');
+  const form = document.getElementById('profileForm');
+  const hideEl = view === 'summary' ? form : summary;
+  const showEl = view === 'summary' ? summary : form;
+
+  hideEl.classList.add('is-fading');
+
+  setTimeout(() => {
+    hideEl.hidden = true;
+    hideEl.classList.remove('is-fading');
+
+    showEl.hidden = false;
+    showEl.classList.add('is-fading');
+    void showEl.offsetWidth; // forca reflow para a transicao de entrada funcionar
+    showEl.classList.remove('is-fading');
+
+    if (onShown) onShown();
+  }, PROFILE_TRANSITION_MS);
+}
+
+/**
+ * Exibe o resumo recolhido do perfil e esconde o formulario, com transicao suave.
+ */
+function showProfileSummary() {
+  crossfadeProfileView('summary');
+}
+
+/**
+ * Exibe o formulario de edicao do perfil, com transicao suave.
  * @param {boolean} isEditingExisting - se true, mostra o botao "Cancelar" (ha um resumo para voltar).
  */
 function showProfileForm(isEditingExisting) {
-  document.getElementById('profileSummary').hidden = true;
-  document.getElementById('profileForm').hidden = false;
   document.getElementById('cancelProfileBtn').hidden = !isEditingExisting;
-  document.getElementById('userName').focus();
+  crossfadeProfileView('form', () => document.getElementById('userName').focus());
 }
 
 /**
- * Cancela a edicao, descarta alteracoes nao salvas e volta para o resumo.
+ * Busca os dados de perfil no storage e preenche os campos do formulario.
+ */
+async function fetchAndFillProfile() {
+  const data = await chrome.storage.local.get('userInfo');
+  const info = data.userInfo || { name: '', role: '' };
+
+  document.getElementById('userName').value = info.name || '';
+  document.getElementById('userRole').value = info.role || '';
+
+  return info;
+}
+
+/**
+ * Cancela a edicao, descarta alteracoes nao salvas e volta para o resumo (ou formulario vazio).
  */
 async function cancelProfileEdit() {
-  await loadUserProfile();
+  try {
+    const info = await fetchAndFillProfile();
+    if (info.name && info.name.trim()) {
+      renderProfileSummary(info);
+      showProfileSummary();
+    } else {
+      showProfileForm(false);
+    }
+  } catch (err) {
+    console.error('[SCI Popup] Erro ao cancelar edicao:', err);
+  }
 }
 
 /**
@@ -118,16 +171,16 @@ async function saveUserProfile() {
     btn.textContent = 'Perfil Salvo';
     btn.style.background = '#2e7d32';
 
+    if (name) {
+      renderProfileSummary({ name, role });
+      showProfileSummary();
+    }
+
     setTimeout(() => {
       btn.textContent = originalText;
       btn.style.background = '';
       btn.disabled = false;
-
-      if (name) {
-        renderProfileSummary({ name, role });
-        showProfileSummary();
-      }
-    }, 1200);
+    }, 500);
   } catch (err) {
     console.error('[SCI Popup] Erro ao salvar perfil:', err);
     btn.textContent = 'Erro ao Salvar';
@@ -136,7 +189,7 @@ async function saveUserProfile() {
       btn.textContent = originalText;
       btn.style.background = '';
       btn.disabled = false;
-    }, 1500);
+    }, 1200);
   }
 }
 
@@ -267,10 +320,54 @@ function renderSnippetList(snippets) {
     div.className = 'snippet-item';
     div.innerHTML = `
       <span class="snippet-name">${escapeHtml(item.name || 'Sem nome')}</span>
-      <span class="snippet-trigger">${escapeHtml(item.trigger)}</span>
+      <span class="snippet-trigger" title="Clique para copiar">${escapeHtml(item.trigger)}</span>
     `;
+
+    const triggerEl = div.querySelector('.snippet-trigger');
+    triggerEl.addEventListener('click', () => copyTriggerToClipboard(triggerEl, item.trigger));
+
     container.appendChild(div);
   });
+}
+
+/**
+ * Copia o texto para a area de transferencia, com fallback para navegadores/contextos
+ * sem suporte a navigator.clipboard, e da feedback visual no elemento clicado.
+ */
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) { /* cai no fallback abaixo */ }
+  }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+async function copyTriggerToClipboard(el, trigger) {
+  const originalText = el.textContent;
+  const ok = await copyText(trigger);
+
+  el.textContent = ok ? 'Copiado!' : 'Erro ao copiar';
+  el.classList.toggle('copied', ok);
+
+  setTimeout(() => {
+    el.textContent = originalText;
+    el.classList.remove('copied');
+  }, 1200);
 }
 
 /**

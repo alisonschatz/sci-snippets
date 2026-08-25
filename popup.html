@@ -21,32 +21,39 @@
   <main class="main">
     <!-- Perfil do Usuario -->
     <section class="section profile-section" id="profileSection">
-      <!-- Estado recolhido: perfil ja preenchido -->
-      <div class="profile-summary" id="profileSummary" hidden>
-        <div class="profile-summary-info">
-          <span class="profile-avatar" id="profileAvatar" aria-hidden="true">?</span>
-          <div class="profile-summary-text">
-            <span class="profile-summary-name" id="profileSummaryName"></span>
-            <span class="profile-summary-role" id="profileSummaryRole"></span>
-          </div>
-        </div>
-        <button type="button" class="profile-edit-btn" id="profileEditBtn">Editar</button>
+      <div class="section-header">
+        <h2 class="section-title">Perfil do Usu&aacute;rio</h2>
       </div>
 
-      <!-- Estado expandido: formulario, visivel quando o perfil ainda nao foi preenchido ou esta em edicao -->
-      <div class="profile-form" id="profileForm">
-        <h2 class="section-title">Perfil do Usuario</h2>
-        <div class="form-group">
-          <label for="userName">Nome Completo</label>
-          <input type="text" id="userName" class="form-input" placeholder="Ex: Joao Silva" autocomplete="off">
+      <div class="profile-body">
+        <!-- Estado recolhido: perfil ja preenchido -->
+        <div class="profile-summary" id="profileSummary" hidden>
+          <div class="profile-summary-info">
+            <span class="profile-avatar" id="profileAvatar" aria-hidden="true">?</span>
+            <div class="profile-summary-text">
+              <span class="profile-summary-name" id="profileSummaryName"></span>
+              <span class="profile-summary-role" id="profileSummaryRole"></span>
+            </div>
+          </div>
+          <button type="button" class="profile-edit-btn" id="profileEditBtn">Editar</button>
         </div>
-        <div class="form-group">
-          <label for="userRole">Cargo / Setor</label>
-          <input type="text" id="userRole" class="form-input" placeholder="Ex: Analista de Suporte" autocomplete="off">
-        </div>
-        <div class="profile-form-actions">
-          <button id="saveProfileBtn" class="btn btn-primary">Salvar Perfil</button>
-          <button type="button" id="cancelProfileBtn" class="btn btn-ghost" hidden>Cancelar</button>
+
+        <!-- Estado expandido: formulario, visivel quando o perfil ainda nao foi preenchido ou esta em edicao -->
+        <div class="profile-form" id="profileForm">
+          <div class="profile-form-fields">
+            <div class="form-group">
+              <label for="userName">Nome</label>
+              <input type="text" id="userName" class="form-input" placeholder="Ex: Joao Silva" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="userRole">Cargo</label>
+              <input type="text" id="userRole" class="form-input" placeholder="Ex: Analista" autocomplete="off">
+            </div>
+          </div>
+          <div class="profile-form-actions">
+            <button id="saveProfileBtn" class="btn btn-primary">Salvar Perfil</button>
+            <button type="button" id="cancelProfileBtn" class="btn btn-ghost" hidden>Cancelar</button>
+          </div>
         </div>
       </div>
     </section>
