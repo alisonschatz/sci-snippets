@@ -177,7 +177,7 @@ snippets:
 
 
   - trigger: ":regras"
-    name: "Regra de Negócio"
+    name: "Dúvida de Regra de Negócio"
     replace: |
       ## DÚVIDA DE REGRA DE NEGÓCIO
 
