@@ -4,18 +4,19 @@ snippets:
     replace: |
       ## CONTEXTUALIZAÇÃO DO REQUISITO
 
-      **Localização & Acesso**
+      **Localização / Acesso**
       - **URL:** https://
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
 
       **Acessos para Teste**
-      - Admin (contabilidade): 
-      - Cliente (empresa): 
+      - Admin: 
+      - Cliente: 
       - Usuário adicional: 
+      - Outros: 
 
       ---
 
-      ## SITUAÇÃO & PROBLEMÁTICA
+      ## SITUAÇÃO / PROBLEMÁTICA
       - **Comportamento Atual:** 
       - **Comportamento Esperado:** 
 
@@ -49,11 +50,12 @@ snippets:
 
       **Localização & Ambiente**
       - **URL:** https://
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
 
       **Acessos Utilizados**
       - Admin: 
       - Cliente: 
+      - Usuário adicional: 
       - Outros: 
 
       ---
@@ -81,7 +83,7 @@ snippets:
       ---
 
       ## RESULTADO DO TESTE
-      **Status:** APROVADO ✅
+      **Status:** APROVADO
       
       ---
       Atenciosamente,
@@ -94,13 +96,14 @@ snippets:
     replace: |
       ## CONTEXTUALIZAÇÃO DO TESTE
 
-      **Localização & Ambiente**
+      **Localização / Ambiente**
       - **URL:** https://
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
 
       **Acessos Utilizados**
       - Admin: 
       - Cliente: 
+      - Usuário adicional: 
       - Outros: 
 
       ---
@@ -132,7 +135,7 @@ snippets:
       ---
 
       ## RESULTADO DO TESTE
-      **Status:** REPROVADO ❌
+      **Status:** REPROVADO
       
       ---
       Atenciosamente,
@@ -145,9 +148,9 @@ snippets:
     replace: |
       ## IMPEDIMENTO IDENTIFICADO
 
-      **Localização & Ambiente**
+      **Localização / Ambiente**
       - **URL:** https://
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
 
       ---
 
@@ -174,12 +177,12 @@ snippets:
 
 
   - trigger: ":regras"
-    name: "Refinamento / Dúvida de Regra de Negócio"
+    name: "Regra de Negócio"
     replace: |
       ## DÚVIDA DE REGRA DE NEGÓCIO
 
       **Localização**
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
 
       ---
 
@@ -208,9 +211,13 @@ snippets:
       **O que foi feito:**
       - 
 
+      ---
+
       **Onde/como testar:**
-      - **Caminho (Menu):** SCI WEB > 
+      - **Caminho:**
       - **Cenário Principal:** 
+
+      ---
 
       **Impactos/alterações adicionais:**
       - 
