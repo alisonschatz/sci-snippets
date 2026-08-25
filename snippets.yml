@@ -48,7 +48,7 @@ snippets:
     replace: |
       ## CONTEXTUALIZAÇÃO DO TESTE
 
-      **Localização & Ambiente**
+      **Localização / Acesso**
       - **URL:** https://
       - **Caminho:**
 
@@ -96,7 +96,7 @@ snippets:
     replace: |
       ## CONTEXTUALIZAÇÃO DO TESTE
 
-      **Localização / Ambiente**
+      **Localização / Acesso**
       - **URL:** https://
       - **Caminho:**
 
@@ -148,7 +148,7 @@ snippets:
     replace: |
       ## IMPEDIMENTO IDENTIFICADO
 
-      **Localização / Ambiente**
+      **Localização / Acesso**
       - **URL:** https://
       - **Caminho:**
 
@@ -181,7 +181,8 @@ snippets:
     replace: |
       ## DÚVIDA DE REGRA DE NEGÓCIO
 
-      **Localização**
+      **Localização / Acesso**
+      - **URL:** https://
       - **Caminho:**
 
       ---
@@ -196,7 +197,7 @@ snippets:
       ---
 
       ## IMPACTO NO CARD
-      - [ ] Aguardando definição do Product Owner (PO) / Analista de Negócio para prosseguir.
+      - Aguardando definição do Product Owner (PO) / Analista de Negócio para prosseguir.
 
       ---
       Atenciosamente,
@@ -209,6 +210,7 @@ snippets:
       ## FINALIZAÇÃO DO DESENVOLVIMENTO
 
       **O que foi feito:**
+      
       - 
 
       ---
